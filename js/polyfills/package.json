@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "devDependencies": {
+    "polyfill-service": "git+https://github.com/Financial-Times/polyfill-service.git",
+    "uglify-js": "^2.8.22"
+  },
+  "scripts": {
+    "build": "npm run build-polyfill && npm run copy-dist && npm run update-dist",
+    "build-polyfill": "cd node_modules/polyfill-service && npm run build",
+    "copy-dist": "rm -rf ./__dist && cp -r node_modules/polyfill-service/polyfills/__dist ./__dist",
+    "update-dist": "node index.js"
+  }
+}

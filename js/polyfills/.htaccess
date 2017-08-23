@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^(.+).min.js$ index.php?polyfills=$1&minify=1 [END,QSA]
+RewriteRule ^(.+).js$ index.php?polyfills=$1 [END,QSA]
+
+AddOutputFilterByType DEFLATE application/javascript
+SetOutputFilter DEFLATE
